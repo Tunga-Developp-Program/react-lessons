@@ -1,11 +1,32 @@
-import React from 'react';
-import './assets/css/App.css';
+import React, { useEffect, useState } from "react";
+import "./assets/css/App.css";
+
+// interface for initial state 
+interface Data {
+  title: "";
+  completed: "";
+}
 
 function App() {
+  const [data, setData] = useState<Data>({
+    title: "",
+    completed: "",
+  });
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res);
+        console.log(res);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-      <h1>Let us Learn React</h1>
+      
+        <p>{data.title}</p>
+   
       </header>
     </div>
   );
