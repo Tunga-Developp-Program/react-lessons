@@ -13,7 +13,20 @@ code {
     monospace;
 }
 
-form{
-  width: 500px;
-  margin: 0 auto;
+button {
+  width: 100%;
+}
+
+ul li{
+  display: block;
+  padding: 10px;
+  margin-right: 50px;
+  margin-left: 20px;
+  background: rgb(216, 211, 208);
+}
+
+ul li:nth-child(even) {
+  background: #e98686;
+  margin-right: 50px;
+  margin-left: 20px; 
 }

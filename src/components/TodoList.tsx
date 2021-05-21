@@ -3,11 +3,11 @@ import React from "react";
 const TodoList = (props: any) => {
 
   return (
-    <ol>
+    <ul className="mt-2 text-secondary">
       {props.mytodos.map((todo: any) => {
         return <li> {todo}</li>;
       })}
-    </ol>
+    </ul>
   );
 };
 export default TodoList;
