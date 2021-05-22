@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background-color: #f4f4f4;
 }
 
 code {
@@ -16,4 +17,42 @@ code {
 form{
   width: 500px;
   margin: 0 auto;
+}
+form{
+  display: flex;
+}
+button {
+  color:white;
+  margin-left:5px;
+}
+ol{
+  margin:20px;
+  
+}
+li{
+  list-style: none;
+  margin-right: 10%;
+}
+
+div{
+  /* border:1px solid green; */
+  width:650px;
+  height:300px;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+
+hr{
+  margin-top: 5%;
+}
+
+.App{
+  margin-top: 5%;
+  margin-left: 15%;
+}
+button{
+  color:#ffffff;
+}
+form{
+  margin-top: 5%;
 }

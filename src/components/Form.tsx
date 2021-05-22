@@ -20,8 +20,9 @@ const Form = (props:any) => {
   };
   return (
     <form onSubmit={Submit}>
+    
       <input type="text" onChange={handleChange} className="form-control form-control-sm custom" />
-      <button type="submit" className="btn btn-info"> Add</button>
+      <button type="submit" className="btn btn-info btn-sm text-white"> Add</button>
     </form>
   );
 };
