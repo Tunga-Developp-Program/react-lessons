@@ -8,11 +8,12 @@ import './assets/css/App.css';
 function App() {
   const [todos, setTodos] = useState(["Go for Eid"])
   return (
-    <div className="App">
+    <div className="App container">
       <section>
-        <h1>Todo App</h1>
-        <Form  mytodos={todos} setTodos={setTodos}/>
+
+        <Form mytodos={todos} setTodos={setTodos}/>
         <TodoList mytodos={todos} setTodos={setTodos}/>
+
       </section>
 
     </div>
