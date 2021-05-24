@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from 'react-bootstrap';
 
 // GENERICS IN TYPESCRIPT ...
 // useEffect,useState
@@ -18,10 +19,13 @@ const Form = (props:any) => {
     setTodo(event.target.value);
     
   };
+  
   return (
     <form onSubmit={Submit}>
       <input type="text" onChange={handleChange} className="form-control form-control-sm custom" />
-      <button type="submit" className="btn btn-info"> Add</button>
+      <Button variant="primary" size="lg" block type="submit">
+        Add task
+      </Button>
     </form>
   );
 };

@@ -6,18 +6,22 @@ import './assets/css/App.css';
 
 
 function App() {
-  const [todos, setTodos] = useState(["Go for Eid"])
+  const [todos, setTodos] = useState([""]);
+  
+  
   return (
     <div className="App">
       <section>
         <h1>Todo App</h1>
         <Form />
-        <TodoList mytodos={todos} />
       </section>
+      <div className="Todolist">
+        <TodoList mytodos={todos} />
+      </div>
 
     </div>
-  );
-}
+  )
+};
 
 export default App;
 
