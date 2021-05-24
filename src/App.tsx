@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="App container">
       <section>
-        <Form />
-        <TodoList mytodos={todos} />
+
+        <Form mytodos={todos} setTodos={setTodos}/>
+        <TodoList mytodos={todos} setTodos={setTodos}/>
+
       </section>
 
     </div>
