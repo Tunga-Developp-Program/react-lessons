@@ -12,8 +12,8 @@ function App() {
       <div className='row justify-content-center'>
         <section className='col-md-5 shadow-lg p-3 mb-5 bg-white rounded'>
           <h1>Todo App</h1>
-          <Form />
-          <TodoList mytodos={todos} />
+          <Form mytodos={todos} setTodos={setTodos} />
+          <TodoList mytodos={todos} setTodos={setTodos} />
         </section>
       </div>
 
