@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // Form Component => Function based component
 const Form = (props:any) => {
   // useState
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState('');
  
 
   const Submit = (event: any) => {
@@ -20,8 +20,8 @@ const Form = (props:any) => {
   };
   return (
     <form onSubmit={Submit}>
-      <input type="text" onChange={handleChange} className="form-control form-control-sm custom" />
-      <button type="submit" className="btn btn-info"> Add</button>
+      <input type='text' onChange={handleChange} className='form-control form-control-sm custom' />
+      <button type='submit' className='btn btn-success'> Add</button>
     </form>
   );
 };

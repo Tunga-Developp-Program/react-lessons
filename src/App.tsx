@@ -9,11 +9,14 @@ function App() {
   const [todos, setTodos] = useState(["Go for Eid"])
   return (
     <div className="App">
-      <section>
-        <h1>Todo App</h1>
-        <Form />
-        <TodoList mytodos={todos} />
-      </section>
+      <div className='row justify-content-center'>
+        <section className='col-md-5 shadow-lg p-3 mb-5 bg-white rounded'>
+          <h1>Todo App</h1>
+          <Form />
+          <TodoList mytodos={todos} />
+        </section>
+      </div>
+
 
     </div>
   );
