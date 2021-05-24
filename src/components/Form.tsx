@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import {Button, Card, Form} from 'react-bootstrap';
 
 // GENERICS IN TYPESCRIPT ...
 // useEffect,useState
 // Form Component => Function based component
-const Form = (props:any) => {
+const FormComponent = (props:any) => {
   // useState
   const [todo, setTodo] = useState("");
  
@@ -19,11 +20,22 @@ const Form = (props:any) => {
     
   };
   return (
-    <form onSubmit={Submit}>
-      <input type="text" onChange={handleChange} className="form-control form-control-sm custom" />
-      <button type="submit" className="btn btn-info"> Add</button>
-    </form>
+    <Card className="mb-3" style={{color:'blue'}}>
+      <Card.Body>
+        <Card.Title>
+          Todo App
+        </Card.Title>
+        <Card.Text>
+Create your todo list by adding items below:
+        </Card.Text>
+      </Card.Body>
+      <Form.Group onSubmit={Submit}>
+        <Form.Control type="text" onChange={handleChange} className="form-control form-control-sm custom"/>
+        <br />
+        <Button type="submit" className="btn btn-info"> Add</Button>
+      </Form.Group>
+    </Card>
   );
 };
 
-export default Form;
+export default FormComponent;
