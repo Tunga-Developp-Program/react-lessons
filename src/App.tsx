@@ -1,19 +1,33 @@
 import React from "react";
 import "./assets/css/App.css";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+
+import About from "./components/About"
+import Home from "./components/Home"
+import Projects from "./components/Projects"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 function App() {
   return (
-    <div> 
-      <Header />
-      <div className="row">
-        <Sidebar />
-        <Main />
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+ 
+        </Switch>
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

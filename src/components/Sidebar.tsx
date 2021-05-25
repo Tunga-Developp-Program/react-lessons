@@ -1,4 +1,5 @@
 import React from "react";
+import myprofile from "../assets/img/sylvy.jpg"
 
 const Sidebar = () => {
   return (
@@ -6,11 +7,13 @@ const Sidebar = () => {
       <h2>About Me</h2>
       <h5>Photo of me:</h5>
       <div className="images">
-        <img src="https://picsum.photos/300/200" width="auto" alt="" />
+        <img src={myprofile} width="300" alt="" />
       </div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3>More Text</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
+      <p>A dynamic software developer. Analytical problem solver with a talent for thinking outside the box for creative solutions. </p>
+      <h3>Projects Completed</h3>
+      <p>Massajja Division Ufarm</p>
+      <p>African Money Tracker</p>
+      <p>Ultimate Blog App</p>
       <div className="images">
         <img src="https://picsum.photos/301/60" width="auto" alt="" />
       </div>
