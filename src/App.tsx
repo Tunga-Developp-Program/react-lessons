@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./assets/css/App.css";
 
 function App() {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, makeUsers] = useState<any[]>([]);
+
   useEffect(() => {
-    // Normal Javascript/Typescript fetch api method
+    // Normal Javascript/Typescript fetch api method : GET REQUEST ...
     fetch("http://127.0.0.1:8000/api/users/", {
       headers: {
         "Content-Type": "application/json",
@@ -15,7 +16,7 @@ function App() {
         return response.json();
       })
       .then(function (data) {
-        setUsers(data);
+        makeUsers(data);
         console.log(users);
       })
       .catch(function (error) {
@@ -32,10 +33,10 @@ function App() {
           // Javascript within JSX
           // map is a higher order array method
 
-          users.map(function (user) {
+          users.map(function (user, index, userarry) {
             return (
-              <li>
-             
+              <li key={index}>
+                {user.email} :
                 {user.username} : {user.url}
               </li>
             );
