@@ -6,12 +6,7 @@ function App() {
 
   useEffect(() => {
     // Normal Javascript/Typescript fetch api method : GET REQUEST ...
-    fetch("http://127.0.0.1:8000/api/users/", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Basic ${btoa("eric:eric")}`,
-      },
-    })
+    fetch("http://jsonplaceholder.typicode.com/users")
       .then(function (response) {
         return response.json();
       })
@@ -28,21 +23,27 @@ function App() {
     <div className="App">
       <h1>Fetch some data from api</h1>
 
-      <ol>
+      <table>
+        <tr>
+          <th>email</th>
+          <th>username</th>
+          <th>phone</th>
+        </tr>
         {
           // Javascript within JSX
           // map is a higher order array method
 
           users.map(function (user, index, userarry) {
             return (
-              <li key={index}>
-                {user.email} :
-                {user.username} : {user.url}
-              </li>
+              <tr>
+                <td> {user.email} </td>
+                <td>{user.username} </td>
+                <td>{user.phone}</td>
+              </tr>
             );
           })
         }
-      </ol>
+      </table>
     </div>
   );
 }
