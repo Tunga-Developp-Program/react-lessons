@@ -9,7 +9,7 @@ const MoviesCards = (props:any) => {
             props.movies.map((movie:any)=>{
 
                 return(
-                    <div className="card col-4">
+                    <div className="card col-4" key={movie.id}>
                     <img src={`${image_url}${movie.backdrop_path}`}className="card-img-top" alt="..." />
                     <div className="card-body">
                       <h5 className="card-title">{movie.original_title}</h5>
