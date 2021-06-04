@@ -30,6 +30,7 @@ function App() {
 
       {/* passing movies as aprop so that they are avialable in the moviesCards component */}
       <MoviesCards movies={movies} />
+
     </div>
   );
 }
