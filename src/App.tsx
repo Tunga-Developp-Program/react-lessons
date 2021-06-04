@@ -1,12 +1,15 @@
-import React from 'react';
-import './assets/css/App.css';
+import React, { useContext } from "react";
+import "./assets/css/App.css";
+import AddForm from "./components/AddForm";
+import ListNames from "./components/ListNames";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <h1>Let us Learn React</h1>
-      </header>
+      <h1>Context api</h1>
+
+      <ListNames  />
+      <AddForm />
     </div>
   );
 }
