@@ -7,7 +7,7 @@ const Logout = () => {
     <div>
       <button onClick={() => setLoggedIn(false)}>Logout to application</button>
     </div>
-  );
+  )
 };
 
 export default Logout;

@@ -11,6 +11,7 @@ console.log(loggedIn);
 
   return (
     <div>
+
       {loggedIn ? (
         <h1 className="log">logged In</h1>
       ) : (
