@@ -4,7 +4,7 @@ import Card from "./Card";
 const Articles = () => {
   const articles = [
     {
-      id: 1,
+      id: 3,
       author: "John Doe",
       title:
         "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -24,7 +24,7 @@ const Articles = () => {
       image: image,
     },
     {
-      id: 1,
+      id: 2,
       author: "John Doe",
       title:
         "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -39,8 +39,8 @@ const Articles = () => {
     <div className="container">
       <div className="row g-0">
         {articles.map((el, index) => (
-          <div className="col-md-4">
-            <Card key={el.id} content={el} />
+          <div className="col-md-4" key={el.id}>
+            <Card  content={el} />
           </div>
         ))}
       </div>

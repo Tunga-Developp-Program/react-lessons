@@ -1,4 +1,3 @@
-
 import firebase from "firebase/app";
 
 // Add the Firebase products that you want to use
@@ -17,7 +16,9 @@ export const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const fireStorage = firebase.storage() // this will be our storage for image
-export const fireDb = firebase.firestore() // this will be our databse
+export const fireStorage = firebase.storage(); // this will be our storage for image
+export const fireDb = firebase.firestore(); // this will be our databse
 
-export const fireAuth = firebase.auth()
+export const fireAuth = firebase.auth();
+
+

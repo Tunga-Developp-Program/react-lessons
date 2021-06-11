@@ -10,7 +10,6 @@ import SingleArticle from "./pages/SingleArticle";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
-
 function App() {
   return (
     <div className="app">
