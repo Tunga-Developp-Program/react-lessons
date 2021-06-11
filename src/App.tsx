@@ -10,7 +10,30 @@ import SingleArticle from "./pages/SingleArticle";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
+import {fireDb} from "./firebaseConfig"
 function App() {
+{
+// const docRef = fireDb.collection("articles").doc("7thna6Pra6zS71DLtRwt");
+// // Firebase ===> collection ===> document .. use .get() ==> data
+// docRef.get().then((doc) => {
+//     if (doc.exists) {
+//         console.log("Document data:", doc.data());
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }).catch((error) => {
+//     console.log("Error getting document:", error);
+// });
+
+}
+const arr :any[]= []
+
+
+
+
+
+
   return (
     <div className="app">
       <Router>

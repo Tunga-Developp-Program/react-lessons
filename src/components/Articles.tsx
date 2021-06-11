@@ -1,46 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image from "../assets/img/landscape.jpg";
 import Card from "./Card";
+import { fireDb } from "../firebaseConfig";
 const Articles = () => {
-  const articles = [
-    {
-      id: 3,
-      author: "John Doe",
-      title:
-        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      story:
-        "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-      time: "12/4/7",
-      image: image,
-    },
-    {
-      id: 1,
-      author: "John Doe",
-      title:
-        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      story:
-        "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-      time: "12/4/7",
-      image: image,
-    },
-    {
-      id: 2,
-      author: "John Doe",
-      title:
-        "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      story:
-        "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-      time: "12/4/7",
-      image: image,
-    },
-  ];
+  const [articles, setArticles] = useState<any[]>([]);
+
+useEffect(()=>{
+ const arr: any[] = [];
+
+  fireDb
+    .collection("articles")
+    .get()
+    .then((documents) => {
+      // documents is an array of documents
+      documents.forEach((doc) => {
+        arr.push(doc.data());
+      });
+        setArticles(arr); // updating the state
+
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+
+
+},[])
 
   return (
     <div className="container">
       <div className="row g-0">
-        {articles.map((el, index) => (
-          <div className="col-md-4" key={el.id}>
-            <Card  content={el} />
+        {articles.map((document, index) => (
+          <div className="col-md-4" key={index}>
+            <Card content={document} />
           </div>
         ))}
       </div>

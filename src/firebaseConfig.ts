@@ -3,8 +3,9 @@ import firebase from "firebase/app";
 // Add the Firebase products that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import "firebase/storage"
 
-export const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyDpKJUBv0EBjYanXtoYoGI_6exdISwTkpM",
   authDomain: "ultimate-blog-ug.firebaseapp.com",
   projectId: "ultimate-blog-ug",
@@ -16,9 +17,12 @@ export const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const fireStorage = firebase.storage(); // this will be our storage for image
 export const fireDb = firebase.firestore(); // this will be our databse
 
+export const fireStorage = firebase.storage(); // this will be our storage for image
+
 export const fireAuth = firebase.auth();
+
+
 
 
