@@ -30,19 +30,16 @@ body {
 }
 
 .nav a {
-  padding: 2rem;
+  padding:auto 2rem;
   text-transform: uppercase;
   text-decoration: none;
+margin-right: 0.5rem;
   color: var(--primary-color);
 }
 .navbar-brand {
   padding-top: 1.3rem;
 }
-.nav a:active,
-.nav a:hover {
-  color: var(--secondary-color);
-  text-decoration: underline var(--secondary-color);
-}
+
 
 .showcase-image {
   width: 441px;

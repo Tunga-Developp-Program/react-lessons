@@ -31,7 +31,7 @@ useEffect(()=>{
       <div className="row g-0">
         {articles.map((document, index) => (
           <div className="col-md-4" key={index}>
-            <Card content={document} />
+            <Card content={document} idx={index} />
           </div>
         ))}
       </div>

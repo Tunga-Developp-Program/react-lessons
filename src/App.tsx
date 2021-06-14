@@ -10,7 +10,8 @@ import SingleArticle from "./pages/SingleArticle";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer";
-import {fireDb} from "./firebaseConfig"
+import {fireDb,fireAuth} from "./firebaseConfig"
+import PrivateRoute from "./components/PrivateRoute";
 function App() {
 {
 // const docRef = fireDb.collection("articles").doc("7thna6Pra6zS71DLtRwt");
@@ -28,6 +29,7 @@ function App() {
 
 }
 
+
   return (
     <div className="app">
       <Router>
@@ -36,16 +38,16 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/create">
-            <CreateArticle />
-          </Route>
+          <PrivateRoute path="/create" >
+            <CreateArticle/>
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/profile">
+          <PrivateRoute  path="/profile">
             <Profile />
-          </Route>
-          <Route path="/article/1">
+          </PrivateRoute>
+          <Route  path="/article/:id">
             <SingleArticle />
           </Route>
         </Switch>

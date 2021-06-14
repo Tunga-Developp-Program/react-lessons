@@ -1,35 +1,77 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Image from "../assets/img/landscape.jpg";
-import loveIcon from "../assets/img/love_icon.svg"
-import shareIcon from "../assets/img/share_icon.svg"
+import loveIcon from "../assets/img/love_icon.svg";
+import shareIcon from "../assets/img/share_icon.svg";
+import { fireDb } from "../firebaseConfig";
+import { useHistory, useParams } from 'react-router-dom'
 
 const SingleArticle = () => {
+  const { id } = useParams<any>()
+console.log(id);
+  const [articles, setArticles] = useState<any[]>([]);
+
+useEffect(()=>{
+ const arr: any[] = [];
+
+  fireDb
+    .collection("articles")
+    .get()
+    .then((documents) => {
+      // documents is an array of documents
+      documents.forEach((doc) => {
+        arr.push(doc.data());
+      });
+        setArticles(arr); // updating the state
+
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+
+
+},[])
+const article = articles[id]
+
+
+
   return (
+
+
     <div className="container">
+{
+article?(
+<>
       <div className="article-lg">
-        <img src={Image} className="img-fluid" alt="" />
+        <img src={article.imageUrl} className="img-fluid" alt="" />
       </div>
       <div className="article-content">
-        <div className="showcase-credits">Lorem, ipsum. Lorem, ipsum.</div>
+        <div className="showcase-credits">{articles[id].title}.</div>
         <div className="showcase-title">
-          <h2>Lorem ipsum dolor sit.</h2>
+          <h2>time published</h2>
         </div>
         <div className="showcase-desc">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-            repudiandae veniam vero cum beatae possimus itaque nobis magni autem
-            reiciendis? Ea doloremque hic quam suscipit accusantium tempore
-            quaerat amet illum?
+            {article.story}
           </p>
         </div>
       </div>
-<div className="interract">
-<hr />
-<span className="like p-3"><img src={loveIcon} alt=""  /> Give it a heart</span>
-<span className="share p-3"><img src={shareIcon} alt="" /> Share it</span>
+      <div className="interract">
+        <hr />
+        <span className="like p-3">
+          <img src={loveIcon} alt="" /> Give it a heart
+        </span>
+        <span className="share p-3">
+          <img src={shareIcon} alt="" /> Share it
+        </span>
+      </div>
+</>
+):<h1> No artilces found, please try again</h1>
 
-</div>
+}
+
     </div>
+
+
   );
 };
 
