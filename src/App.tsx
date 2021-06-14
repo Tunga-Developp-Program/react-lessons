@@ -27,12 +27,6 @@ function App() {
 // });
 
 }
-const arr :any[]= []
-
-
-
-
-
 
   return (
     <div className="app">
