@@ -1,12 +1,10 @@
 import React from 'react';
 import './assets/css/App.css';
-
+import FunApp from "./components/FunApp"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <h1>Let us Learn React</h1>
-      </header>
+    <FunApp/>
     </div>
   );
 }
