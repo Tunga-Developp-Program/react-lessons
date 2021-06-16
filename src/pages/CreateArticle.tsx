@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Redirect } from "react-router";
 import fileIcon from "../assets/img/file_icon.svg";
 import { AuthContext } from "../contexts/AuthContex";
 import { fireDb, fireStorage, timestamp } from "../firebaseConfig";
@@ -13,8 +12,8 @@ const CreateArticle = (props: any) => {
     let image = e.target.files;
     if (image) {
       const storageRef = fireStorage.ref(image[0].name);
-      storageRef.put(image[0]);
-      setImgaeUrl(await storageRef.getDownloadURL());
+      storageRef.put(image[0]); // saves/uploads the image
+      setImgaeUrl(await storageRef.getDownloadURL()); // retrieves the url
     }
   };
 

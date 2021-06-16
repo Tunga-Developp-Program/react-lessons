@@ -1,9 +1,8 @@
-import React,{useEffect,useState} from "react";
-import Image from "../assets/img/landscape.jpg";
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import loveIcon from "../assets/img/love_icon.svg";
 import shareIcon from "../assets/img/share_icon.svg";
 import { fireDb } from "../firebaseConfig";
-import { useHistory, useParams } from 'react-router-dom'
 
 const SingleArticle = () => {
   const { id } = useParams<any>()

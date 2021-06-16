@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fireAuth } from "../firebaseConfig";
 
 export const AuthContext = React.createContext<any>("");
@@ -25,9 +25,7 @@ const AuthContextProvider: React.FC<{ children: JSX.Element[] | JSX.Element }> =
     };
 
     return (
-      <AuthContext.Provider value={value}>
-        { children}
-      </AuthContext.Provider>
+      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     );
   };
 

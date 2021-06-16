@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import profileImage from "../assets/img/profile_img.svg";
 import loveIconSm from "../assets/img/love_icon_sm.svg";
 import penIcon from "../assets/img/pen_icon.svg";
 import { AuthContext } from "../contexts/AuthContex";

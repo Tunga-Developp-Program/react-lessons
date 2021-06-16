@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import image from "../assets/img/landscape.jpg";
-import Card from "./Card";
 import { fireDb } from "../firebaseConfig";
+import Card from "./Card";
 const Articles = () => {
   const [articles, setArticles] = useState<any[]>([]);
 
